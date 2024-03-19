@@ -1,0 +1,111 @@
+###first check wheather the repository exist or not: git status____________________________________
+1.git init----------This command is used to create a repository
+2.git add --a -------This command is used to track files
+3.git status --------this command is used to check the status of a our repository
+4.git add (modified file name)----this command adds the modified file to a staged
+4.git rm -rf .git ------this command is used to delete a repository
+
+
+
+###commit : git commit -m 'message'_______________________________________________________________
+{
+
+>>>>git log -------this command is used to see all the commit 
+>>> git commit -m 'message'--------
+>>>>In Git, a "commit" is like taking a picture of your project at a specific moment. It captures all the changes you've made to your files since the last picture (commit). Each commit has a unique ID and a message describing what you changed. It's like saving your progress in a video game—you can always go back to a previous commit if you need to.
+-------
+}
+
+
+
+##UNTRACKING CERTAIN FILE:::{____________________________________________________________________
+if there is certain file that you dont want to keep track that means even if it is changed it shouldnot be  consider as modified . you can do it in a following ways:
+1:touch .gitignore------this will create a file name .gitignore
+2:the file which you dont want to keep track wite its name and type inside .gitignore and save it 
+3:git add --a ---------addd .gitignore to track
+4:git add -m "what changes have you done write it and "------commit it
+5:(write *log  )--------if you want to ignore all the .log files 
+6:git by default ignores the empty folders
+7:(/dir/)----it is used to ignore only outer dir if there is dir iniside dir inside dir will be tracked
+}
+
+
+##comparing dir with staged::{________________________________________________________________
+1:git diff------- compares working directory with the staging area
+2:git diff --staged---it compares staging area with  previous commit
+
+}
+
+###skiping the staging area________________________________________________________________________  
+{
+git commit -a -m 'commitmessage' -----this command skips the staging area and directly commit the changes
+                                  -------however it doesnt commit the untracked file
+
+
+}
+
+#####moving and renaming git {________________________________________________________________________________________________
+
+git rm filename -----this removes (deletes) the file
+git rm -f filename-----This is used to forcly remove (delete) file
+git mv current_file_name new_name------the command in used to rename 
+
+
+}
+
+####untracking tracked fil{________________________________________________________________________
+
+git rm --cached (file_name)-----this command is used to  untrack a file that has been tracking till now
+                         -----now even if you make changes it wont affect because it hass been already untracked
+
+}
+
+###cloning repository______________________________________________________________________________
+{
+git clone (url:https//) (name)--------this command is used to clone all history and files
+
+}
+
+###viewing and changing commits____________________________________________________________________
+{
+1.git log------this command is used to view all commits
+2.git log -p -------this command is used to view all the commits with the differences 
+           -------that means it shows all the changes that have been made
+3.git log -p -2 --------it shows only 2 commit differences
+4.git log --stat --------this show all the commit stats in short like how many lines added /deleted / etc
+5.git log --pretty=oneline--------this command shows all the commit in one line
+6.git log --pretty=short-------this command shows all the commit in short
+7.git log --pretty=full--------this command shows a littlbe bit more information than short
+8.git log --since=2.days/months/years--------this comands shows all the commit since given input
+9.git log --pretty=format:"%h--%an"-----------this commands shows all the hash with authors name
+10.git commit --amend-----this is used to change commit
+                  ------when next window get opens first press i and then make changes and 
+                  -------for closing type press esc shift + semicolon(:) and type wq
+11.(esc colon wq)__________for closing
+}
+
+
+###unstaging file_______________________________________________________________________________
+{ 1.git restore --staged (filename) ------this command is used to unstage file
+2.git checkout -- (filename)-----------this command help us to bring prievious commit
+                            ------------if accidently code get removed we can bring back by using this command
+3.git checkout -f   --------- this command changes my current working dir to previous commit dir 
+
+}
+
+git remote:{____________________________________________________________________________________
+
+
+In Git, a "remote" refers to a version of your repository that is hosted on a server, typically on a platform like GitHub, GitLab, or Bitbucket. It serves as a centralized repository that allows multiple developers to collaborate on a project.
+
+When you clone a repository from a remote server, Git automatically creates a remote called "origin," which points to the repository you cloned from. You can also add additional remotes if you want to pull changes from or push changes to other repositories.
+}
+
+
+
+
+
+
+
+
+
