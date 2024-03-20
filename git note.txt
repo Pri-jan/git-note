@@ -93,7 +93,12 @@ git clone (url:https//) (name)--------this command is used to clone all history 
 
 }
 
-git remote:{____________________________________________________________________________________
+##note:github pull is to bring all the code remote repository (i.e github)to our computer_________________________________
+##github push is to put all our code to the remote repository (i.e github) _____________________________________
+
+
+
+#####git remote:{____________________________________________________________________________________
 
 
 In Git, a "remote" refers to a version of your repository that is hosted on a server, typically on a platform like GitHub, GitLab, or Bitbucket. It serves as a centralized repository that allows multiple developers to collaborate on a project.
@@ -102,10 +107,56 @@ When you clone a repository from a remote server, Git automatically creates a re
 }
 
 
+########generating ssh key{________________________________________________
+
+Check for existing SSH keys: Before you generate a new SSH key, you can check to see if you have any existing SSH keys. Open a terminal or command prompt and run:
+
+ls -al ~/.ssh---------
+This command will list all files in the ~/.ssh directory. If you see files named id_rsa.pub or id_dsa.pub, you already have SSH keys. You can skip the next step and proceed to
+
+Generate a new SSH key: If you don't have existing SSH keys or want to generate a new one, run the following command:
 
 
+ssh-keygen -t ed25519 -C "your_email@example.com"-------------
+Replace "your_email@example.com" with your email address. Press Enter to accept the default file location and optionally enter a passphrase for extra security.
+
+Start the SSH agent: If the SSH agent isn't already running, you can start it using the following command:
+
+eval "$(ssh-agent -s)"--------------
+Add your SSH private key to the SSH agent: Use the following command to add your SSH private key to the SSH agent:
+
+ssh-add ~/.ssh/id_ed25519------------
+Replace id_ed25519 with the filename of your private key if it's different.
+
+Copy the SSH public key: You need to copy the SSH public key to your clipboard. You can use the following command to print the SSH public key:
+
+cat ~/.ssh/id_ed25519.pub-----------
+Add SSH key to GitHub: Log in to your GitHub account, go to Settings > SSH and GPG keys, and click on New SSH key. Paste your SSH public key into the "Key" field and give it a descriptive title. Finally, click on Add SSH key.
+}
+
+###### alias in git_________________________________________________________________________________________________
+
+git config --global alias.(shortcut_name) 'shortcut for what'------------------this command creates a shortcut
+
+In Git, an alias is a custom shortcut or shorthand for a longer Git command. You can define aliases to make commonly used Git commands shorter and easier to remember. Aliases can be configured globally for your user or scoped to a specific Git repository.
+
+For example, instead of typing git status every time you want to check the status of your repository, you could create an alias called st that accomplishes the same thing. Then, you would only need to type git st to see the status.
 
 
+######branches and master in git_____________________________________________________
+Imagine you're building a house (your project), and you start with the main blueprint (the master branch). Now, let's say you want to try out a new design for the kitchen without messing up the original plan. You create a copy of the main blueprint and call it something like "kitchen-design" (this is your new branch).
 
+1.git checkout -b (name)---------this command is used to create a new branch
+2.git checkout master ------------this command takes user in master branch
+3.git checkout (createdbranch_name)-------------this command takes us back to our created branch
+4.git branch ---------------this command help us to view all the branches
 
+##### merging branch with master______________________________________________________________
+git merge (branch_name)-------this command is used to merge master with branch  
+                        -------after merging add to stage and commit
+git branch -v -------------this will show me all my branches and master last commit
+git branch --merged---------this command shows all the branches that has been merged with master
+git branch --no-merged ---------this will show all the branches that has not been merged with master
+git branch -d 'branch_name'------this will delete the unmerged branch with capital D
 
+                          
