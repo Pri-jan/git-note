@@ -100,6 +100,7 @@ git clone (url:https//) (name)--------this command is used to clone all history 
 
 #####git remote:{____________________________________________________________________________________
 
+1.git remote -v--------This command lists all the remote repositories associated with your local repository, along with their URLs  
 
 In Git, a "remote" refers to a version of your repository that is hosted on a server, typically on a platform like GitHub, GitLab, or Bitbucket. It serves as a centralized repository that allows multiple developers to collaborate on a project.
 
@@ -159,4 +160,19 @@ git branch --merged---------this command shows all the branches that has been me
 git branch --no-merged ---------this will show all the branches that has not been merged with master
 git branch -d 'branch_name'------this will delete the unmerged branch with capital D
 
-                          
+##########pushing git branches to the remote repository_____________________________________________________________________
+
+1.git remote -v--------This command lists all the remote repositories associated with your local repository, along with their URLs
+2.git push origin (name_of_branch)---------this will push the branch to the remote repository note:before pushing we should be on a branch not in master
+2.git push -u origin master-----------------------------------------------------{
+
+git push: It's like sending your changes to a shared place.
+-u: It's like telling Git, "Remember this connection for next time."
+origin: It's just the name of the shared place where you're sending your changes. (Usually, it's where you got the code from originally.)
+master: It's the name of your main set of changes. You're saying, "Send my main set of changes to the shared place."
+So, altogether:
+
+You're sending your main set of changes to the shared place you got the code from, and you're telling Git to remember this connection for next time.
+
+}
+   
