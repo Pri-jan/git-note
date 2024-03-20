@@ -164,7 +164,7 @@ git branch -d 'branch_name'------this will delete the unmerged branch with capit
 
 1.git remote -v--------This command lists all the remote repositories associated with your local repository, along with their URLs
 2.git push origin (name_of_branch)---------this will push the branch to the remote repository note:before pushing we should be on a branch not in master
-2.git push -u origin master-----------------------------------------------------{
+3.git push -u origin master-----------------------------------------------------{
 
 git push: It's like sending your changes to a shared place.
 -u: It's like telling Git, "Remember this connection for next time."
@@ -175,4 +175,51 @@ So, altogether:
 You're sending your main set of changes to the shared place you got the code from, and you're telling Git to remember this connection for next time.
 
 }
-   
+###deleting remote branches _________________________________________________________
+git push -d origin (branch_name)------this command is used to delete the remote branch
+
+
+###forking and cloning____________________________________________________________________
+Forking:
+Forking is a GitHub-specific action that creates a copy of a repository under your own GitHub account.
+When you fork a repository on GitHub, you create a separate copy of the repository that you can modify independently.
+Forking is often used when you want to contribute to a project hosted on GitHub but don't have write access to the original repository. It allows you to make changes to your fork and then submit pull requests to the original repository to propose your changes.
+
+Cloning:
+Cloning is a Git action that creates a copy of a repository on your local machine.
+When you clone a repository, you create a local copy of the entire repository, including all files, commit history, branches, and other data.
+Cloning is commonly used when you want to work with a repository locally, make changes, and push those changes back to the remote repository.
+You can clone any Git repository, whether it's hosted on GitHub or elsewhere.
+
+
+######pull request___________________________________________________________________________
+
+Here's a step-by-step guide on how to create a pull request:
+
+1.Fork the Repository: If you're contributing to a project on GitHub that you don't have write access to, you need to fork the repository first. This creates a copy of the repository under your GitHub account. You can do this by clicking the "Fork" button on the repository's GitHub page.
+
+2.Clone the Forked Repository: Once you've forked the repository, you need to clone your forked copy to your local machine using the git clone command:
+
+3.git clone <forked-repository-url>
+Create a New Branch: Before making changes, create a new branch for your work. You can do this using the git checkout command:
+
+4.git checkout -b <new-branch-name>
+Make Changes: Make the necessary changes to the codebase in your new branch using your preferred text editor or IDE.
+
+5.Stage and Commit Changes: Once you've made your changes, stage them for commit using git add, and then commit them with a descriptive commit message using git commit:
+
+6.git add .
+git commit -m "Your descriptive commit message here"
+Push Changes to Your Fork: Push your changes to your forked repository on GitHub using the git push command:
+
+7.git push origin <new-branch-name>
+Open a Pull Request: Go to your forked repository on GitHub and navigate to the branch you just pushed. You'll see a "New pull request" button. Click it.
+
+8.Compare Changes: GitHub will present you with a page where you can review the changes you've made. Make sure everything looks correct.
+
+9.Create the Pull Request: Once you're happy with your changes, click the "Create pull request" button. Give your pull request a descriptive title and description explaining what changes you've made and why they're necessary.
+
+10.Wait for Review and Merge: Your pull request is now open for review by the project maintainers. They'll review your changes, provide feedback if needed, and ultimately merge your changes into the main project branch if everything looks good.
+
+That's it! You've successfully created a pull request. Now, it's time to wait for feedback and collaborate with the project maintainers to get your changes merged.
+                          
